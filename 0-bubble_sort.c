@@ -3,7 +3,6 @@
  * bubble_sort - func sorts array of int in ascd ord using Bubble sort algrithm
  * @size: size of array
  * @array: array of integers
- * Return: integers in ascending order
  */
 
 void bubble_sort(int *array, size_t size)

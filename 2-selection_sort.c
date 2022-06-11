@@ -12,12 +12,12 @@ void selection_sort(int *array, size_t size)
 	if (array == NULL)
 		return;
 
-	for (i = 0; i < size -1; i++)
+	for (i = 0; i < size - 1; i++)
 	{
 		index = i;
 		for (j = i + 1; j < size; j++)
 		{
-			if ( array[j] < array[index])
+			if (array[j] < array[index])
 				index = j;
 		}
 		if (array[index] != array[i])

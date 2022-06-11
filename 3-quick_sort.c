@@ -1,10 +1,12 @@
 #include "sort.h"
+
 /**
  * partition - partitate the array
  * @array: array of integers
  * @low: start of array
  * @high: end of the array
- * @size: size of array
+ * @size: size of arrayu
+ * Return: position of the pivot
  */
 int partition(int *array, int low, int high, size_t size)
 {

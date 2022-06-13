@@ -1,6 +1,22 @@
 #include "sort.h"
 
 /**
+ * _swap - swaps two values in an array
+ * @array: array of int
+ * @i: i
+ * @j: j
+ * Return: No return
+ */
+void _swap(int *array, int i, int j)
+{
+        int swap;
+
+        swap = array[i];
+        array[i] = array[j];
+        array[j] = swap;
+}
+
+/**
  * partition - partitate the array
  * @array: array of integers
  * @low: start of array
@@ -11,23 +27,17 @@
 int partition(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
-	int swap;
 	int i = low, j;
 
-	for (j = low; j <= high - 1; j++)
+	for (j = low; j <= high; j++)
 	{
 		if (array[j] < pivot)
 		{
-			swap = array[i];
-			array[i] = array[j];
-			array[j] = swap;
-			print_array(array, size);
+			_swap(array, i, j);
 			i++;
 		}
 	}
-	swap = array[i];
-	array[i] = array[high];
-	array[high] = swap;
+	_swap(array, i, high);
 	print_array(array, size);
 
 	return (i);
@@ -60,7 +70,7 @@ void quick_Sort(int *array, int low, int high, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL)
+	if (array == NULL || size < 2)
 		return;
 	quick_Sort(array, 0, size - 1, size);
 }

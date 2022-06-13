@@ -13,24 +13,21 @@ int partition(int *array, int low, int high, size_t size)
 	int pivot = array[high];
 	int swap;
 	
-	while (1)
+	for (i = low, j = high; 1; i++, j--)
 	{
-		for (i = low, j = high; 1; i++, j--)
-		{
-			while (array[i] < pivot)
-				i++;
+		while (array[i] < pivot)
+			i++;
 
 
-			while (array[j] > pivot)
-				j--;
+		while (array[j] > pivot)
+			j--;
 		
-			if (i >= j) 
-				return (i);
-			swap = array[i];
-			array[i] = array[j];
-			array[j] = swap;
-			print_array(array, size);
-		}
+		if (i >= j) 
+			return (i);
+		swap = array[i];
+		array[i] = array[j];
+		array[j] = swap;
+		print_array(array, size);
 	}
 }
 

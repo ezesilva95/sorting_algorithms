@@ -2,6 +2,7 @@
 
 /**
  * _swap - swaps two values in an array
+ * @size: size
  * @array: array of int
  * @i: i
  * @j: j
@@ -9,13 +10,13 @@
  */
 void _swap(int *array, int i, int j, int size)
 {
-        int swap;
+	int swap;
 
 	if (array[i] != array[j])
 	{
-        	swap = array[i];
-        	array[i] = array[j];
-        	array[j] = swap;
+		swap = array[i];
+		array[i] = array[j];
+		array[j] = swap;
 		print_array(array, size);
 	}
 }

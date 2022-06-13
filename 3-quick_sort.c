@@ -7,13 +7,17 @@
  * @j: j
  * Return: No return
  */
-void _swap(int *array, int i, int j)
+void _swap(int *array, int i, int j, int size)
 {
         int swap;
 
-        swap = array[i];
-        array[i] = array[j];
-        array[j] = swap;
+	if (array[i] != array[j])
+	{
+        	swap = array[i];
+        	array[i] = array[j];
+        	array[j] = swap;
+		print_array(array, size);
+	}
 }
 
 /**
@@ -33,12 +37,11 @@ int partition(int *array, int low, int high, size_t size)
 	{
 		if (array[j] < pivot)
 		{
-			_swap(array, i, j);
+			_swap(array, i, j, size);
 			i++;
 		}
 	}
-	_swap(array, i, high);
-	print_array(array, size);
+	_swap(array, i, high, size);
 
 	return (i);
 }

@@ -6,13 +6,14 @@
  * @size: size of array
  * @low: start
  * @high: end
+ * Return: position of pivot
  */
 int partition(int *array, int low, int high, size_t size)
 {
 	int i = low - 1, j = high + 1;
 	int pivot = array[high];
 	int swap;
-	
+
 	for (i = low, j = high; 1; i++, j--)
 	{
 		while (array[i] < pivot)
@@ -21,8 +22,8 @@ int partition(int *array, int low, int high, size_t size)
 
 		while (array[j] > pivot)
 			j--;
-		
-		if (i >= j) 
+
+		if (i >= j)
 			return (i);
 		swap = array[i];
 		array[i] = array[j];
@@ -53,7 +54,7 @@ void quick_Sort(int *array, int low, int high, size_t size)
 }
 
 /**
- * quick_sort_horare - function that quick sort an array
+ * quick_sort_hoare - function that quick sort an array
  * @array: array of integers
  * @size: size of array
  */
